@@ -1,0 +1,42 @@
+{
+    "name": "vntrungld/prometheus-exporter-php-fpm-collector",
+    "description": "Php-fpm Collector for Prometheus Exporter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vntrungld",
+            "email": "vn.trungld@gmail.com",
+            "homepage": "https://github.com/vntrungld"
+        }
+    ],
+    "homepage": "https://github.com/vntrungld/prometheus-exporter-php-fpm-collector",
+    "keywords": ["Laravel", "Prometheus Exporter", "Php-fpm Collector"],
+    "require": {
+        "illuminate/support": "~6|~7|~8|~9|~10",
+        "vntrungld/prometheus-exporter": "^0.0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~4|~5|~6|~7|~8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vntrungld\\PrometheusExporterPhpFpmCollector\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vntrungld\\PrometheusExporterPhpFpmCollector\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vntrungld\\PrometheusExporterPhpFpmCollector\\PrometheusExporterPhpFpmCollectorServiceProvider"
+            ],
+            "aliases": {
+                "PrometheusExporterPhpFpmCollector": "Vntrungld\\PrometheusExporterPhpFpmCollector\\Facades\\PrometheusExporterPhpFpmCollector"
+            }
+        }
+    }
+}
