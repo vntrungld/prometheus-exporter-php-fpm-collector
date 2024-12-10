@@ -16,6 +16,7 @@ composer require vntrungld/prometheus-exporter-php-fpm-collector
 ```
 
 ## Usage
+Just add to `prometheus-exporter` config
 
 ## Change log
 
