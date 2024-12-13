@@ -12,6 +12,7 @@ class PhpFpmCollectorSet implements CollectorSet
     public function collectors(): array
     {
         return [
+            \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\UpCollector::class,
             \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\AcceptedConnectionsCollector::class,
             \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\ActiveProcessesCollector::class,
             \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\IdleProcessesCollector::class,
@@ -23,6 +24,12 @@ class PhpFpmCollectorSet implements CollectorSet
             \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\SlowRequestsCollector::class,
             \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\StartSinceCollector::class,
             \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\TotalProcessesCollector::class,
+            \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\ProcessLastRequestCpuCollector::class,
+            \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\ProcessLastRequestMemoryCollector::class,
+            \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\ProcessRequestDurationCollector::class,
+            \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\ProcessRequestLengthCollector::class,
+            \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\ProcessRequestsCollector::class,
+            \Vntrungld\PrometheusExporterPhpFpmCollector\Collectors\ProcessStateCollector::class,
         ];
     }
 }

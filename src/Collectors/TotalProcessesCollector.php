@@ -2,20 +2,18 @@
 
 namespace Vntrungld\PrometheusExporterPhpFpmCollector\Collectors;
 
-use Vntrungld\PrometheusExporter\Collectors\Collector;
 use Vntrungld\PrometheusExporter\Prometheus;
 
-class TotalProcessesCollector implements Collector
+class TotalProcessesCollector extends BaseCollector
 {
     /**
      * @inheritDoc
      */
     public function register(Prometheus $prometheus): void
     {
-        $status = fpm_get_status();
-
         $prometheus->addCounter('fpm_total_processes')
             ->help('The number of idle + active processes.')
-            ->value($status['total-processes']);
+            ->labels(['pool'])
+            ->value($this->status('total-processes'), [$this->status('pool')]);
     }
 }

@@ -23,7 +23,9 @@ class PrometheusExporterPhpFpmCollectorServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton('prometheus-exporter-php-fpm-status-getter', function () {
+            return new StatusGetter();
+        });
     }
 
     /**

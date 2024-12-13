@@ -4,16 +4,18 @@ namespace Vntrungld\PrometheusExporterPhpFpmCollector\Collectors;
 
 use Vntrungld\PrometheusExporter\Prometheus;
 
-class ActiveProcessesCollector extends BaseCollector
+class UpCollector extends BaseCollector
 {
     /**
      * @inheritDoc
      */
     public function register(Prometheus $prometheus): void
     {
-        $prometheus->addGauge('fpm_active_processes')
+        $up = (bool) $this->status();
+
+        $prometheus->addGauge('fpm_up')
             ->help('The number of active processes.')
             ->labels(['pool'])
-            ->value($this->status('active-processes'), [$this->status('pool')]);
+            ->value($up, [$this->status('pool')]);
     }
 }
