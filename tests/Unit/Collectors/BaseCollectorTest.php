@@ -39,6 +39,9 @@ class BaseCollectorTest extends TestCase
 
         $reflection = new \ReflectionClass($collector);
         $method = $reflection->getMethod('status');
+        if (PHP_VERSION_ID < 80100) {
+            $method->setAccessible(true);
+        }
 
         $result = $method->invoke($collector, 'pool');
 

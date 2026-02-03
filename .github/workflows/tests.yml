@@ -137,4 +137,4 @@ jobs:
         run: composer update --prefer-dist --no-interaction --no-progress
 
       - name: Check code style
-        run: vendor/bin/phpunit --configuration phpunit.xml
+        run: vendor/bin/phpunit
