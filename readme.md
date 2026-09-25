@@ -18,6 +18,7 @@ A PHP-FPM metrics collector for [Prometheus Exporter](https://github.com/vntrung
 | 10.x    | 8.1 - 8.3 | 1.x     |
 | 11.x    | 8.2 - 8.4 | 1.x     |
 | 12.x    | 8.2 - 8.4 | 1.x     |
+| 13.x    | 8.3 - 8.5 | 1.3+    |
 
 ## Installation
 
